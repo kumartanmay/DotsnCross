@@ -13,18 +13,18 @@ its neighbours are '.' and 'x', then the pattern is '..x'. We look up
 means that in the new string, 'x' will be at position k.
 
 # Rules:
-        Value      |  pattern in current string       | position k in new string    |   contribution to pattern number is 0 if replaced by '.' and value if replaced by 'x'
-|:------:          |:------------------:              |:------------------          |:----------------:|
-|  1               |  '...'                           | '.'                         |         1 * 0    |
-|  2               |  '..x'                           | 'x'                         |         2 * 1    |
-|  4               |  '.x.'                           | 'x'                         |         4 * 1    |
-|  8               |  '.xx'                           | 'x'                         |         8 * 1    |
-| 16               |  'x..'                           | '.'                         |        16 * 0    |
-| 32               |  'x.x'                           | '.'                         |        32 * 0    |
-| 64               |  'xx.'                           | '.'                         |        64 * 0    |
-| 128              |  'xxx'                           | 'x'                         |        128 * 1   |
-|                  |                                  |                             |     ----------   |
-|                  |                                  |                             |          142     |
+    Value      |  pattern in current string       | position k in new string    |   contribution to pattern number is 0 if replaced by '.' and value if replaced by 'x'
+        |:------:          |:------------------:              |:------------------          |:----------------:|
+        |  1               |  '...'                           | '.'                         |         1 * 0    |
+        |  2               |  '..x'                           | 'x'                         |         2 * 1    |
+        |  4               |  '.x.'                           | 'x'                         |         4 * 1    |
+        |  8               |  '.xx'                           | 'x'                         |         8 * 1    |
+        | 16               |  'x..'                           | '.'                         |        16 * 0    |
+        | 32               |  'x.x'                           | '.'                         |        32 * 0    |
+        | 64               |  'xx.'                           | '.'                         |        64 * 0    |
+        | 128              |  'xxx'                           | 'x'                         |        128 * 1   |
+        |                  |                                  |                             |     ----------   |
+        |                  |                                  |                             |          142     |
  
  To calculate the patterns which will have the central character x, work
  out the values required to sum to the pattern number. For example,
@@ -35,21 +35,21 @@ means that in the new string, 'x' will be at position k.
  lead to an 'x' in the next line and the rest have a '.'
 
  
- For pattern 142, and starting string
-| ...........x........... |
+# For pattern 142, and starting string: 
+        | ...........x........... |
  
  
- the new strings created will be
-| ..........xx........... | (generations = 1)
-| .........xx............ | (generations = 2)
-| ........xx............. | (generations = 3)
-| .......xx.............. | (generations = 4)
-| ......xx............... | (generations = 5)
-| .....xx................ | (generations = 6)
-| ....xx................. | (generations = 7)
-| ...xx.................. | (generations = 8)
-| ..xx................... | (generations = 9)
-| .xx.................... | (generations = 10)
+# the new strings created will be:
+        | ..........xx........... | (generations = 1)
+        | .........xx............ | (generations = 2)
+        | ........xx............. | (generations = 3)
+        | .......xx.............. | (generations = 4)
+        | ......xx............... | (generations = 5)
+        | .....xx................ | (generations = 6)
+        | ....xx................. | (generations = 7)
+        | ...xx.................. | (generations = 8)
+        | ..xx................... | (generations = 9)
+        | .xx.................... | (generations = 10)
 
  Note that the first position of the string is next to the last position
  in the string.
