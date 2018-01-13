@@ -13,21 +13,18 @@ its neighbours are '.' and 'x', then the pattern is '..x'. We look up
 means that in the new string, 'x' will be at position k.
 
 # Rules:
-        |  pattern in        | position k in     |   contribution to
- Value  |  current string    | new string        |   pattern number
-        |                    |                   |   is 0 if replaced by '.'
-        |                    |                   |   and value if replaced
-        |                    |                   |   by 'x'
-  1     |  '...'             | '.'               |         1 * 0
-  2     |  '..x'             | 'x'               |         2 * 1
-  4     |  '.x.'             | 'x'               |         4 * 1
-  8     |  '.xx'             | 'x'               |         8 * 1
- 16     |  'x..'             | '.'               |        16 * 0
- 32     |  'x.x'             | '.'               |        32 * 0
- 64     |  'xx.'             | '.'               |        64 * 0
- 128    |  'xxx'             | 'x'               |        128 * 1
-        |                    |                   |     ----------
-        |                    |                   |          142
+        Value      |  pattern in current string       | position k in new string    |   contribution to pattern number is 0 if replaced by '.' and value if replaced by 'x'
+|:------:          |:------------------:              |:------------------          |:----------------:|
+|  1               |  '...'                           | '.'                         |         1 * 0    |
+|  2               |  '..x'                           | 'x'                         |         2 * 1    |
+|  4               |  '.x.'                           | 'x'                         |         4 * 1    |
+|  8               |  '.xx'                           | 'x'                         |         8 * 1    |
+| 16               |  'x..'                           | '.'                         |        16 * 0    |
+| 32               |  'x.x'                           | '.'                         |        32 * 0    |
+| 64               |  'xx.'                           | '.'                         |        64 * 0    |
+| 128              |  'xxx'                           | 'x'                         |        128 * 1   |
+|                  |                                  |                             |     ----------   |
+|                  |                                  |                             |          142     |
  
  To calculate the patterns which will have the central character x, work
  out the values required to sum to the pattern number. For example,
