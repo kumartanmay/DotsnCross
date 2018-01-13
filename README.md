@@ -13,8 +13,7 @@ its neighbours are '.' and 'x', then the pattern is '..x'. We look up
 means that in the new string, 'x' will be at position k.
 
 # Rules:
-    Value      |  pattern in current string       | position k in new string    |   contribution to pattern number is 0 if replaced by '.' and value if replaced by 'x'
-        |:------:          |:------------------:              |:------------------          |:----------------:|
+                Value      |  pattern in current string       | position k in new string    |   contribution to pattern number is 0 if replaced by '.' and value if replaced by 'x'
         |  1               |  '...'                           | '.'                         |         1 * 0    |
         |  2               |  '..x'                           | 'x'                         |         2 * 1    |
         |  4               |  '.x.'                           | 'x'                         |         4 * 1    |
