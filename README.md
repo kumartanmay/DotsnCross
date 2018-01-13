@@ -12,12 +12,13 @@ its neighbours are '.' and 'x', then the pattern is '..x'. We look up
 '..x' in the table below. In the table, '..x' corresponds to 'x' which
 means that in the new string, 'x' will be at position k.
 
- Rules:
+# Rules:
           pattern in         position k in        contribution to
-  Value    current string     new string           pattern number
+ Value    current string     new string           pattern number
                                                   is 0 if replaced by '.'
                                                   and value if replaced
                                                   by 'x'
+     `
    1       '...'               '.'                        1 * 0
    2       '..x'               'x'                        2 * 1
    4       '.x.'               'x'                        4 * 1
@@ -28,7 +29,7 @@ means that in the new string, 'x' will be at position k.
  128       'xxx'               'x'                      128 * 1
                                                       ----------
                                                            142
-
+    `
  To calculate the patterns which will have the central character x, work
  out the values required to sum to the pattern number. For example,
  32 = 32 so only pattern 32 which is x.x changes the central position to
@@ -37,8 +38,11 @@ means that in the new string, 'x' will be at position k.
  23 = 16 + 4 + 2 + 1 which means that 'x..', '.x.', '..x' and '...' all
  lead to an 'x' in the next line and the rest have a '.'
 
+ 
  For pattern 142, and starting string
  ...........x...........
+ 
+ 
  the new strings created will be
  ..........xx...........  (generations = 1)
  .........xx............  (generations = 2)
